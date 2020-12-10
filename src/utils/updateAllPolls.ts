@@ -18,7 +18,6 @@ export const updateAllPolls = async (client) => {
     for (let poll of allOpenPolls) {
         let toClose = await shouldClose(poll);
         let pollServer = poll.server;
-        console.log(poll, pollServer);
         client.guilds.fetch(pollServer.id)
             .then(async guild => {
                 const guildChannel = guild.channels.resolve(pollServer.channel);

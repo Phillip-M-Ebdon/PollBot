@@ -22,6 +22,5 @@ export const findAllPolls = async (server: Server) => {
         }
     })
 
-    console.log(openPolls, closedPolls)
     return { openPolls, closedPolls }
 }

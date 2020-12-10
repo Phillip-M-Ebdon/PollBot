@@ -50,8 +50,6 @@ module.exports = {
             const user = await getRepository(User).findOne(message.author.id);
             const answers = await answerRepo.find({where: {poll: poll}});
             let previousVote;
-            console.log(answers)
-            console.log(user)
             for (let pollOption of answers) {
                 previousVote = await voteRepo.findOne({
                     where: {
@@ -60,8 +58,7 @@ module.exports = {
                     },
                     relations: ["user", "answer"]
 
-                })
-                console.log(previousVote)
+                });
                 if (previousVote) break;
             }
 

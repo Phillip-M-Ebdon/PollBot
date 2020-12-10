@@ -46,8 +46,6 @@ createConnection().then(async () => {
                     .filter(c => c.type=="text" && c.permissionsFor(guild.me).has("SEND_MESSAGES"))
                     .sort((a, b) => a.position - b.position || Long.fromString(a.id).subtract(Long.fromString(b.id)).toNumber())
                     .first();
-            console.log("filtered Channels")
-                console.log(defaultChannel)
             }
             await joinGuild(guild, defaultChannel);
             defaultChannel.send("Hello, I'm Pollbot.");

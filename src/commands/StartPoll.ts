@@ -25,7 +25,7 @@ module.exports = {
             const server = await getRepository(Server).findOne(message.guild.id);
 
             const { openPolls, closedPolls } = await findPoll(name, server);
-            console.log(closedPolls)
+            (closedPolls)
             if (openPolls.length > 0) {
                 return message.reply(`A poll with the name \`${name}\` is currently open, please use a different name`)
             }
@@ -40,11 +40,11 @@ module.exports = {
             newPoll = await pollRepo.save(newPoll);
 
             if (args.length > 0) {
-                console.log(args)
+                (args)
                 const answers = args;
                 const answerRepo = getRepository(Answer);
                 for (let answer of answers) {
-                    console.log(answer)
+                    (answer)
                     try {
                         const newAnswer = answerRepo.create();
                         newAnswer.text = answer;
@@ -53,7 +53,7 @@ module.exports = {
                     } catch (e) {
                         console.error("Error creating answer");
                         console.error(e)
-                        return message.reply("Whoops, I made an error adding some of the answers to this poll");
+                        return message.reply(`Whoops, I made an error adding \`${answer}\`, it may of been a dupe or had a tricky name.`);
                     }
                 }
             }

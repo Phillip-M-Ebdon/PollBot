@@ -22,7 +22,7 @@ export const checkServerUser = async (message) => {
             id: userId,
             username: message.author.username
         });
-        console.log(user);
+        (user);
         user = await userRepo.save(user);
         console.log("Added user to DB")
     }

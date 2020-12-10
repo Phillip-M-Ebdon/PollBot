@@ -21,7 +21,6 @@ module.exports = {
         const answerRepo = getRepository(Answer);
 
         // attempt fetch existing poll on server
-        console.log(server, name)
         const poll = await pollRepo.findOne({
             where: {
                 server: server,
@@ -29,7 +28,6 @@ module.exports = {
                 finished: false
             }
         });
-        console.log(poll);
         if (!poll) return message.reply(`I couldn't find the active poll \`${name}\`.`);
 
 

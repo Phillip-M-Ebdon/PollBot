@@ -12,6 +12,7 @@ module.exports = {
             let reply = new Discord.MessageEmbed()
                 .setTitle("All Commands")
             allCommands.map(cmd => reply.addField(cmd.name, cmd.description));
+            reply.addFields()
             return message.reply(reply)
 
         }
