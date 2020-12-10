@@ -1,13 +1,13 @@
 {
    "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "outDir": "./build",
-      "baseUrl": ".",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "sourceMap": true
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "./build",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "baseUrl": "." /* Base directory to resolve non-absolute module names. */
    },
    "include": ["src/**/*"]
 }

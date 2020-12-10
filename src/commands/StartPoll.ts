@@ -4,7 +4,7 @@ import User from "../entity/User";
 import Server from "../entity/Server";
 import Poll from "../entity/Poll"
 import Answer from "../entity/Answer";
-import {findPoll} from "../utils/FindPoll";
+import {findPoll} from "../utils/findPoll";
 import {closePoll} from "../utils/closePoll";
 
 module.exports = {

@@ -10,7 +10,7 @@ const token = process.env.DISCORD_TOKEN;
 
 import "reflect-metadata";
 
-import {checkServerUser} from "./utils/CheckServerUser";
+import {checkServerUser} from "./utils/checkServerUser";
 import {updateAllPolls} from "./utils/updateAllPolls";
 import {joinGuild} from "./utils/joinGuild";
 import {getNickname} from "./utils/getNickname";
