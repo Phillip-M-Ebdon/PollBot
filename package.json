@@ -4,9 +4,8 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "build": "tsc",
-      "start": "ts-node src/index.ts",
-      "start:watch": "nodemon"
+      "start": "node build/bot.js",
+      "build": "tsc"
    },
    "keywords": [],
    "author": "Phillip Ebdon",

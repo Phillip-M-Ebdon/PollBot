@@ -1,9 +1,4 @@
-import {getNickname} from "./utils/getNickname";
-
 require("dotenv").config();
-
-import "reflect-metadata";
-import {createConnection, Long} from "typeorm";
 const fs = require("fs");
 
 const Discord = require("discord.js");
@@ -13,13 +8,21 @@ const prefix = process.env.PREFIX;
 const delimiter = process.env.DELIMITER;
 const token = process.env.DISCORD_TOKEN;
 
+import "reflect-metadata";
+
 import {checkServerUser} from "./utils/CheckServerUser";
 import {updateAllPolls} from "./utils/updateAllPolls";
 import {joinGuild} from "./utils/joinGuild";
+import {getNickname} from "./utils/getNickname";
 
+
+import {createConnection, Long} from "typeorm";
+const env = process.env.NODE_ENV || "development";
+let db_config = require("./dbconfig")[env];
 
 // Start bot once database is connected
-createConnection().then(async () => {
+createConnection(db_config)
+    .then(async () => {
 
     // Dynamically add commands into bot
     client.commands = new Discord.Collection();
