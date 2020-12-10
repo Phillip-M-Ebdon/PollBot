@@ -2,11 +2,12 @@
    "compilerOptions": {
       "target": "es6",
       "module": "commonjs",
-      "moduleResolution": "classic",
+      "moduleResolution": "node",
       "outDir": "./build",
       "baseUrl": ".",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true
-   }
+   },
+   "include": ["src/**/*"]
 }
