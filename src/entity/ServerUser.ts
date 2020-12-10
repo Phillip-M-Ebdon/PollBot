@@ -19,6 +19,6 @@ export default class ServerUser {
     user!: User;
 
     @Column({nullable: true})
-    nickname: string
+    nickname!: string
 
 }
