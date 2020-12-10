@@ -2,7 +2,7 @@
    "compilerOptions": {
       "target": "es6",
       "module": "commonjs",
-      "moduleResolution": "node",
+      "moduleResolution": "classic",
       "outDir": "./build",
       "baseUrl": ".",
       "emitDecoratorMetadata": true,
